@@ -1,0 +1,51 @@
+/* Custom styles to complement Bootstrap dark theme */
+.bg-dark {
+    background-color: var(--bs-dark) !important;
+}
+
+/* Smooth transitions */
+.btn, .card, .form-control {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Custom card hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Custom form styling */
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* Loading state styles */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Footer styling */
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Score display enhancement */
+.progress {
+    background-color: var(--bs-dark);
+    border: 1px solid var(--bs-border-color);
+}
+
+/* Helper classes */
+.text-small {
+    font-size: 0.875rem;
+}
+
+/* Tooltip customization */
+.tooltip {
+    --bs-tooltip-bg: var(--bs-dark);
+    --bs-tooltip-color: var(--bs-light);
+}

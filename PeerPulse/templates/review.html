@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2 class="mb-4"><i class="bi bi-pencil me-2"></i>New Peer Review</h2>
+
+        <form method="POST" id="reviewForm" class="needs-validation" novalidate>
+            <div class="mb-4">
+                <label for="peer_text" class="form-label">Peer's Text</label>
+                <div class="form-text mb-2">Paste the text you are reviewing below:</div>
+                <textarea class="form-control" id="peer_text" name="peer_text" rows="6" required></textarea>
+                <div class="invalid-feedback">Please provide the text to review.</div>
+            </div>
+
+            <div class="mb-4">
+                <label for="prompt_id" class="form-label">Review Prompt</label>
+                <select class="form-select" id="prompt_id" name="prompt_id" required>
+                    <option value="">Choose a prompt...</option>
+                    {% for i, prompt in prompts %}
+                    <option value="{{ i }}">{{ prompt }}</option>
+                    {% endfor %}
+                </select>
+                <div class="invalid-feedback">Please select a prompt.</div>
+            </div>
+
+            <div class="mb-4">
+                <label for="response" class="form-label">Your Review</label>
+                <div class="form-text mb-2">Write your peer review response:</div>
+                <textarea class="form-control" id="response" name="response" rows="6" required></textarea>
+                <div class="invalid-feedback">Please write your review.</div>
+            </div>
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    <i class="bi bi-send me-2"></i>Submit Review
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
